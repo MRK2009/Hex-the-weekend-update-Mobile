@@ -11,7 +11,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   androidBuild:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     strategy:
       matrix:
         arch: [release, debug]
@@ -30,13 +30,13 @@ jobs:
         uses: nttld/setup-ndk@main
         id: setup-ndk
         with:
-          ndk-version: r21e
+          ndk-version: r28c
 
       - name: Setup Java JDK
         uses: actions/setup-java@main
         with:
           distribution: 'zulu'
-          java-version: '19'
+          java-version: '24'
 
       - name: Setup Haxe
         uses: krdlab/setup-haxe@master
